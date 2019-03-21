@@ -6,44 +6,68 @@ Camilo's personal cheat sheet for Vim.
 ===============================================================================
 CONTENTS
 
-	1. Reloading your vim configuration.....................|myhelp-config-reload|
-	2. Hotkeys....................................................|myhelp-hotkeys|
-	3. Searching................................................|myhelp-searching|
-	4. This cheatsheet.........................................|myhelp-cheatsheet|
+	1. Moving around..............................................|myhelp-motions|
+	2. Folding....................................................|myhelp-folding|
+	3. Magit........................................................|myhelp-magit|
+	4. Searching................................................|myhelp-searching|
+	5. This cheatsheet.........................................|myhelp-cheatsheet|
 
 ===============================================================================
-1. Reloading your vim configuration                       *myhelp-config-reload*
+1. Motions                                               *myhelp-motions*
 
-   - :so % : Reloads your vim configuration while editing.
+   - e : Forward end of word					- ) : Forward sentence
+   - E : Forward end of WORD					- } : Forward paragraph
+   - ge : Backward end of word				- ( : Backward sentence
+   - gE : Backward end of WORD				- { : Backward paragraph
+   - w : Forward word									- H : Top of the screen
+   - W : Forward WORD									- M : Middle of the screen
+   - b : Backward word								- L : Bottom of the screen
+   - B : Backward WORD								- | : Absolute column
+
+   - F : Backward to char inc.				- gk : Display line up
+   - T : Backward to char exc. 				- gj : Display line down
+   - ; : Repeat last [ftTF]						- - : Line up on FNB char
+   - , : Repeat last [ftTF] rev.			- + : Line down on FNB char 
+
+   - 0 : Beggining of line						- ^ : FNB char of line
+   - <c-]> : Go to tag								- <c-t> : Return from tag
+
+   - [ : Go to previous 							- ] : Go to next
+				- ( : Unmatched '('								- ) : Unmatched ')'
+				- { : Unmatched '{'								- } : Unmatched '}'
+				- m : Start of method							- M : End of method
+				- # : Unmatched '#if/#else'				- # : Unmatched '#if/#else'
+				- * : Start of a comment					- / : Start of a comment
 
 ===============================================================================
-2. Hotkeys                                                      *myhelp-hotkeys*
+2. Folding                                               *myhelp-folding*
 
-To check what a what key is doing run the command:
-
-```
-:map hotkey
-```
-
-For example:
-
-```
-:map <C-p>
-```
-
-Shows:
-
-```
-<C-P>         <Plug>(ctrlp)
-````
+   - zf : Fold												- zd : Delete fold
+   - za : Toggle fold									- zD : Delete fold recursively
+   - zr : Open one level							- zm : Close one level
+   - zR : Open all folds							- zM : Close all folds
+   - zs : Fold by language syntax
 
 ===============================================================================
-3. Searching                                                  *myhelp-searching*
+3. Magit                                                  *myhelp-magit*
 
-The ag.vim plugin serves as a front for the the_silver_searcher. This is 
-essentially grep for programmers allowing for quick searching across your files. 
-The power of :Ag is using Ag to search and replace for a given string across all 
-the files in your project. 
+   - CC : Commit + Message						- L : Stage current line
+   - CA : Amend + Message							- M : Mark line to stage
+   - CF : Amend no message						- DDD : Discard
+   - S : Stage/Unstage								- I : Add file to .gitignore
+   - F : Stage/Unstage file						- E : Edit
+
+   - <c-n> : Next hunk								- <CR>  : Toggle file folding
+   - <c-p> : Previous hunk
+
+   - R : Refresh buffer								- + : Enlarge diff context
+   - q : Close buffer									- - : Shrink diff context
+   - ? : Help													- 0 : Reset diff context
+
+===============================================================================
+3. NERDTree                                              *myhelp-nerdtree*
+
+
 
 ```
 :args `ag -l string_to_replace .`
