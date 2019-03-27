@@ -1,19 +1,10 @@
 *myhelp.txt*	For NVIM version 0.3.1	Last change: 2019-02-22
 *myhelp*
 
-Camilo's personal cheat sheet for Vim.
+Personal cheat sheet for Vim.
 
 ===============================================================================
-CONTENTS
-
-	1. Moving around..............................................|myhelp-motions|
-	2. Folding....................................................|myhelp-folding|
-	3. Magit........................................................|myhelp-magit|
-	4. Searching................................................|myhelp-searching|
-	5. This cheatsheet.........................................|myhelp-cheatsheet|
-
-===============================================================================
-1. Motions                                               *myhelp-motions*
+--> 1. Motions                                               *myhelp-motions*
 
    - e : Forward end of word					- ) : Forward sentence
    - E : Forward end of WORD					- } : Forward paragraph
@@ -24,6 +15,9 @@ CONTENTS
    - b : Backward word								- L : Bottom of the screen
    - B : Backward WORD								- | : Absolute column
 
+   - I : Insert before the FIRST char in the line
+   - A : Insert after the LAST char in the line
+
    - F : Backward to char inc.				- gk : Display line up
    - T : Backward to char exc. 				- gj : Display line down
    - ; : Repeat last [ftTF]						- - : Line up on FNB char
@@ -31,6 +25,7 @@ CONTENTS
 
    - 0 : Beggining of line						- ^ : FNB char of line
    - <c-]> : Go to tag								- <c-t> : Return from tag
+   - <c-o> : Previous jump						- <c-i> : Next jump
 
    - [ : Go to previous 							- ] : Go to next
 				- ( : Unmatched '('								- ) : Unmatched ')'
@@ -38,18 +33,18 @@ CONTENTS
 				- m : Start of method							- M : End of method
 				- # : Unmatched '#if/#else'				- # : Unmatched '#if/#else'
 				- * : Start of a comment					- / : Start of a comment
-
+<--
 ===============================================================================
-2. Folding                                               *myhelp-folding*
+--> 2. Folding                                               *myhelp-folding*
 
    - zf : Fold												- zd : Delete fold
    - za : Toggle fold									- zD : Delete fold recursively
    - zr : Open one level							- zm : Close one level
    - zR : Open all folds							- zM : Close all folds
    - zs : Fold by language syntax
-
+<--
 ===============================================================================
-3. Magit                                                  *myhelp-magit*
+--> 3. Magit                                                 *myhelp-magit*
 
    - CC : Commit + Message						- L : Stage current line
    - CA : Amend + Message							- M : Mark line to stage
@@ -63,28 +58,25 @@ CONTENTS
    - R : Refresh buffer								- + : Enlarge diff context
    - q : Close buffer									- - : Shrink diff context
    - ? : Help													- 0 : Reset diff context
-
+<--
 ===============================================================================
-3. NERDTree                                              *myhelp-nerdtree*
+--> 4. CommandT                                              *myhelp-commandt*
 
-
-
-```
-:args `ag -l string_to_replace .`
-:argdo %s/string_to_search/replacement_string/g | w
-```
-
+   - <leader>t : File search					- <leader>b : Buffer search
+   - <leader>j : Jumps search					
+<--
 ===============================================================================
-4. This cheatsheet                                           *myhelp-cheatsheet*
+--> 5. Lusty                                                 *myhelp-lusty*
 
-The contents of this cheatsheet should be stored at 
-`~/.config/nvim/plugged/vim-myhelp/doc/myhelp.txt`
+   - <leader>lf : File search					- <leader>lr : File search from here
+   - <leader>lb : Buffer search				- <leader>lg : Buffer grep 
 
-You can create a `tags` file that allows you to then type 
-`:h myhelp-cheatsheet` to quickly jump here. The command to do that is
+   - <c-p> : Previous result					- <c-n>  : Next result
+<--
+===============================================================================
+--> 6. Ack                                                   *myhelp-ack*
 
-```
-helpt ~/.config/nvim/plugged/vim-myhelp
-```
-
-# vim: filetype=help:ts=2
+   - <leader>a : Ack
+<--
+===============================================================================
+# vim: ft=help ts=2 tw=70 fdm=marker fmr=-->,<-- fdl=0 fen
